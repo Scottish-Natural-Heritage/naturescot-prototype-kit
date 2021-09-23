@@ -1,0 +1,12 @@
+@import "../../../../../node_modules/govuk-frontend/govuk/settings/all";
+@import "../../../../../node_modules/govuk-frontend/govuk/tools/all";
+@import "../../../../../node_modules/govuk-frontend/govuk/helpers/all";
+
+
+@include govuk-exports("naturescot/component/cookie-bar") {
+  .naturescot-cookie-bar {
+    display: block;
+    width: 100%;
+    padding-top: govuk-spacing(4);
+  }
+}

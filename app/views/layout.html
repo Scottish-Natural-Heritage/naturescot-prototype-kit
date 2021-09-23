@@ -31,17 +31,20 @@
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
+{% from "naturescot/components/header/macro.njk"         import naturescotHeader %}
+{% from "naturescot/components/footer/macro.njk"         import naturescotFooter %}
+
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  NatureScot Prototype Kit
 {% endblock %}
 
 {% block header %}
   {# Set serviceName in config.js. #}
-  {{ govukHeader({
+  {{ naturescotHeader({
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/",
@@ -53,12 +56,20 @@
 
 {% if useAutoStoreData %}
   {% block footer %}
-    {{ govukFooter({
+    {{ naturescotFooter({
       meta: {
         items: [
+                    {
+            href: "#",
+            text: "Privacy"
+          },
           {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "GOV.UK Prototype Kit " + releaseVersion
+            href: "#",
+            text: "Cookies"
+          },
+          {
+            href: "#",
+            text: "Accessibility"
           },
           {
             href: "/prototype-admin/clear-data",
@@ -75,5 +86,5 @@
     {% include "includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}
   {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+  <!-- NatureScot Prototype Kit {{releaseVersion}} -->
 {% endblock %}
